@@ -1,0 +1,5 @@
+FROM nginx
+RUN apt-get install update -y && apt-get install curl -y
+HEALTHCHECK --interval=1m --timeout=3s --retries=3 \
+ CMD curl -f http://localhost || exit 1
+# 마지막 CMD 부분이 ㅅㅏㅇ태를 체크하는 명령어
